@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Petit+Formal+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+
 
 @import "tailwindcss";
 
@@ -7,9 +10,44 @@
 
 
 *{
-  font-family: "Manrope", sans-serif;
-  font-weight: 800;
-}
+ font-family: "Libre Bodoni", serif;
+ font-weight: 500;
+
+ /* font-family: "Petit Formal Script", cursive;
+ font-weight: 600; */
+
+ /* font-family: "Times New Roman", Times, serif;
+ font-weight: 400; */
+
+} 
+
+
+/* @layer base {
+  body {
+
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 400;
+  }
+
+  h1, h2 {
+
+    font-family: "Libre Bodoni", serif;
+    font-weight: 600;
+  }
+
+  h3, h4 {
+
+    font-family: "Libre Bodoni", serif;
+    font-weight: 500;
+  }
+
+  .fancy {
+
+    font-family: "Petit Formal Script", cursive;
+    font-weight: 600;
+  }
+} */
+
 
 @theme{  
   --color-primary: #ffeffa;
