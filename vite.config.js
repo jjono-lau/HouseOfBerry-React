@@ -9,5 +9,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/houseofberry/', // Set the base path for GitHub Pages
+  base: '/HouseOfBerry-React/', // Set the base path for GitHub Pages
 })
