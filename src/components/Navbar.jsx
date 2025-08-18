@@ -21,8 +21,8 @@ const Navbar = ({ theme, setTheme }) => {
 
 
       {/* Desktop links */}
-      <div className="hidden sm:flex items-center gap-5">
-        <a href="#" className="text-lg hover:border-b">Home</a>
+      <div className="hidden sm:flex items-center gap-5 dark:text-primary">
+        <a href="#" className="text-lg hover:border-b ">Home</a>
         <a href="#about" className="text-lg hover:border-b">About</a>
         <a href="#offering" className="text-lg hover:border-b">Offering</a>
         <a href="#faq-us" className="text-lg hover:border-b">FAQ</a>

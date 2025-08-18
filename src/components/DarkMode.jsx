@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import assets from '../assets/assets';
 
 const DarkMode = ({ theme, setTheme }) => {
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    }else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+
   return (
     <button
-      className="w-8.5 h-8 p-1.5 border border-gray-500 rounded-full flex items-center justify-center"
+      className="w-8.5 h-8 p-1.5 ml-3 border border-gray-500 rounded-full flex items-center justify-center"
     >
       {theme === "dark" ? (
         <img
@@ -26,4 +37,3 @@ const DarkMode = ({ theme, setTheme }) => {
 };
 
 export default DarkMode;
-
