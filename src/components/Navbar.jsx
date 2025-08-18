@@ -1,5 +1,6 @@
 import React from "react";
 import assets from "../assets/assets";
+import DarkMode from "./DarkMode";
 
 const Navbar = ({ theme, setTheme }) => {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -33,6 +34,10 @@ const Navbar = ({ theme, setTheme }) => {
 
       {/* Right side: mobile menu icon & desktop button */}
       <div className="flex items-center gap-2 sm:gap-4">
+
+      <DarkMode theme={theme} setTheme={setTheme}/>
+
+
         {/* Mobile menu icon */}
         <img
           src={theme === "dark" ? assets.menu_icon_dark : assets.menu_icon}
@@ -66,21 +71,13 @@ const Navbar = ({ theme, setTheme }) => {
         />
 
         {/* Sidebar links */}
-        <a href="#" className="text-lg mb-4">
-          Home
-        </a>
-        <a href="#about" className="text-lg mb-4">
-          About
-        </a>
-        <a href="#offering" className="text-lg mb-4">
-          Offering
-        </a>
-        <a href="#faq-us" className="text-lg mb-4">
-          FAQ
-        </a>
-        <a href="#contact" className="text-lg mb-4">
-          Contact
-        </a>
+        <a onClick={() => setSidebarOpen(false)} href="#" className="text-lg mb-4">Home</a>
+        <a onClick={() => setSidebarOpen(false)} href="#about" className="text-lg mb-4">About</a>
+        <a onClick={() => setSidebarOpen(false)} href="#offering" className="text-lg mb-4">Offering</a>
+        <a onClick={() => setSidebarOpen(false)} href="#faq-us" className="text-lg mb-4">FAQ</a>
+        <a onClick={() => setSidebarOpen(false)}href="#contact" className="text-lg mb-4">Contact</a>
+
+
       </div>
     </div>
   );
