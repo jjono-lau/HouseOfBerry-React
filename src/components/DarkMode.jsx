@@ -3,6 +3,13 @@ import assets from '../assets/assets';
 
 const DarkMode = ({ theme, setTheme }) => {
 
+
+  useEffect(() => {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(theme || (prefersDark ? 'dark' : 'light')); 
+  }, [setTheme]);
+
+
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
