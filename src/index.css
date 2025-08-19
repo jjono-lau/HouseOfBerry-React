@@ -59,3 +59,6 @@ text-[#ffeffa] - custom text color
 border-[#ffeffa] - custom border color 
 */
 
+.text-glow {
+  text-shadow: 0 0 1px #000000, 0 0 1px #000000;
+}
