@@ -14,7 +14,7 @@ const Navbar = ({ theme, setTheme }) => {
       <a href="#" className="relative z-30">
         <img
           src={theme === "dark" ? assets.logo_dark : assets.logo}
-          className="w-38 h-20 lex-shrink-0"
+          className="w-22 h-auto lex-shrink-0"
           alt="House of Berry Logo"
         />
       </a>
@@ -23,8 +23,8 @@ const Navbar = ({ theme, setTheme }) => {
       {/* Desktop links */}
       <div className="hidden sm:flex items-center gap-5 dark:text-primary">
         <a href="#" className="text-lg hover:border-b ">HOME</a>
-        <a href="#about" className="text-lg hover:border-b">ABOUT</a>
         <a href="#offerings" className="text-lg hover:border-b">OFFERINGS</a>
+        <a href="#about" className="text-lg hover:border-b">ABOUT</a>
         <a href="#faq" className="text-lg hover:border-b">FAQS</a>
         <a href="#contact" className="text-lg hover:border-b">CONTACT</a>
       </div>
@@ -49,7 +49,7 @@ const Navbar = ({ theme, setTheme }) => {
 
         {/* Desktop Offering button */}
         <a
-          href="#offering"
+          href="#offerings"
           className="text-lg max-sm:hidden flex items-center gap-5 bg-pink-300 text-gray-700 px-6 py-1.5 rounded-full cursor-pointer hover:scale-103 transition-all"
         >
           Offerings <img src={assets.arrow_icon} width={15} alt="Desktop Offerings Button" />
@@ -72,8 +72,8 @@ const Navbar = ({ theme, setTheme }) => {
 
         {/* Sidebar links */}
         <a onClick={() => setSidebarOpen(false)} href="#" className="text-lg mb-4">HOME</a>
-        <a onClick={() => setSidebarOpen(false)} href="#about" className="text-lg mb-4">ABOUT</a>
         <a onClick={() => setSidebarOpen(false)} href="#offerings" className="text-lg mb-4">OFFERINGS</a>
+        <a onClick={() => setSidebarOpen(false)} href="#about" className="text-lg mb-4">ABOUT</a>
         <a onClick={() => setSidebarOpen(false)} href="#faq" className="text-lg mb-4">FAQS</a>
         <a onClick={() => setSidebarOpen(false)}href="#contact" className="text-lg mb-4">CONTACT</a>
 

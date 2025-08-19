@@ -2,6 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 
+@import url('https://fonts.cdnfonts.com/css/bodoniflf');
+@import url('https://fonts.cdnfonts.com/css/sloop');
+
 
 @import "tailwindcss";
 
@@ -11,13 +14,21 @@
 
 *{
  font-family: "Libre Bodoni", serif;
- font-weight: 500;
+ font-weight: 600;
+
+ /* font-family: 'BodoniFLF', sans-serif;
+ font-weight: 600; */
+
+ /* font-family: 'Sloop', sans-serif;
+ font-weight:400; */
 
  /* font-family: "Petit Formal Script", cursive;
  font-weight: 600; */
 
+
+
  /* font-family: "Times New Roman", Times, serif;
- font-weight: 400; */
+ font-weight: 500; */
 
 } 
 
@@ -60,5 +71,5 @@ border-[#ffeffa] - custom border color
 */
 
 .text-glow {
-  text-shadow: 0 0 1px #000000, 0 0 1px #000000;
+  text-shadow: 0 0 0.5px #000000, 0 0 0.5px #000000;
 }
