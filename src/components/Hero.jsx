@@ -18,8 +18,9 @@ const Hero = () => {
       <p className="italic text-glow">House of Berry isn't just about coffee or matcha. It's about turning<br/> everyday moments into something special &mdash; one sip at a time.</p> 
     
 
-    <div>
-        <img src={assets.hero_img} alt="" className='w-full max-w-6xl'/>
+    <div className='relative'>
+        <img src={assets.coffee} alt="" className='w-full max-w-6xl'/>
+        <img src={assets.bgImage2} about="" className='absolute -top-40 -right-40 sm:-top-100 sm:-right-70 -z-1 dark:hidden' />
     </div>
 
     </div>

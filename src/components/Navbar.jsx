@@ -14,7 +14,7 @@ const Navbar = ({ theme, setTheme }) => {
       <a href="#" className="relative z-30">
         <img
           src={theme === "dark" ? assets.logo_dark : assets.logo}
-          className="w-32 h-auto lex-shrink-0"
+          className="w-38 h-20 lex-shrink-0"
           alt="House of Berry Logo"
         />
       </a>
