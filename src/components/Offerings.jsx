@@ -1,29 +1,32 @@
 import React from 'react'
 import assets from '../assets/assets'
 import Title from './Title';
+import MenuCard from './MenuCard';
+import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
+
 
 const Offerings = () => {
 
-  const servicesData = [
+  const menuData = [
     {
-      title: 'Advertising',
-      description: 'We create and manage advertising campaigns to help businesses reach their target audience effectively.',
-      icon: assets.ads_icon
+      title: 'Classic Matcha',
+      description: 'A traditional matcha drink with a rich, earthy flavor and vibrant green color.',
+      icon: HouseOfBerryAssets.matcha
     },
     {
-      title: 'Content Marketing',
-      description: 'Our team produces high-quality content that engages and informs your audience.',
-      icon: assets.marketing_icon
+      title: 'Strawberry Matcha',
+      description: 'A delightful mix of berries and matcha, offering a burst of flavor in every sip.',
+      icon: HouseOfBerryAssets.StrawberryMatcha
     },
     {
-      title: 'Content Writing',
-      description: 'We provide professional content writing services to enhance your brand\'s online presence.',
-      icon: assets.content_icon
+      title: 'Blueberry Matcha',
+      description: 'A unique combination of blueberries and matcha, creating a vibrant and tasty drink.',
+      icon: HouseOfBerryAssets.BlueberryMatcha
     },
     {
-      title: 'Social Media Management',
-      description: 'We manage your social media presence to enhance brand visibility and engagement.',
-      icon: assets.social_icon
+      title: 'Salted Vanilla Matcha',
+      description: 'A savory twist on the classic vanilla matcha, with a hint of salt to enhance the flavor.',
+      icon: HouseOfBerryAssets.SaltedVanillaMatcha
     }
   ]
 
@@ -42,6 +45,11 @@ const Offerings = () => {
 
       <Title title='The Berry Difference' desc="Matcha made fun, flavour made bold, and moments made memorable. We're not just whisking drinks &mdash; we&apos;re shaking up expectations. Here&apos;s what makes us different..."/>
 
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full'>
+        {menuData.map((menu, index) => (
+          <MenuCard key={index} menuData={menu} index={index} />
+        ))}
+      </div>
 
     </div>
   )

@@ -15,8 +15,10 @@ import match256x256 from './matcha256x256.png'
 import matchaLeaf from './matchaLeaf.svg'
 import realMatcha from './realMatcha.svg'
 import xoxoMatcha from './xoxoMatcha.png'
-
-
+import StrawberryMatcha from './StrawberryMatcha.svg'
+import BlueberryMatcha from './BlueberryMatcha.svg'
+import SaltedVanillaMatcha from './SaltedVanillaMatcha.svg'
+import BlueberryMatchaCake from './BlueberryMatchaCake.svg'
 
 export const asset_logos = [
   coffee,
@@ -45,6 +47,10 @@ const HouseOfBerryAssets = {
     matchaLeaf,
     realMatcha,
     xoxoMatcha,
+    SaltedVanillaMatcha,
+    StrawberryMatcha,
+    BlueberryMatcha,
+    BlueberryMatchaCake,
 
 
 }
