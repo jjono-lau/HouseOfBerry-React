@@ -8,6 +8,7 @@ import Questions from './components/Questions';
 import TheCart from './components/Contact';
 import TeamCards from './components/TeamCards';
 import { Toaster } from 'react-hot-toast';
+import Footer from './components/Footer';
 
 
 const App = () => {
@@ -26,7 +27,7 @@ const App = () => {
       <TeamCards />
       <Questions />
       <TheCart theme={theme} />
-      
+      <Footer theme={theme}/>
     </div>
   )
 }
