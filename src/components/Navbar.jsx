@@ -25,7 +25,7 @@ const Navbar = ({ theme, setTheme }) => {
         <a href="#" className="text-lg hover:border-b ">HOME</a>
         <a href="#about" className="text-lg hover:border-b">ABOUT</a>
         <a href="#offerings" className="text-lg hover:border-b">OFFERINGS</a>
-        
+        <a href="#team" className="text-lg hover:border-b">TEAM</a>
         <a href="#faq" className="text-lg hover:border-b">FAQS</a>
         <a href="#contact" className="text-lg hover:border-b">CONTACT</a>
       </div>
@@ -52,9 +52,13 @@ const Navbar = ({ theme, setTheme }) => {
         {/* Desktop Offering button */}
         <a
           href="#offerings"
-          className="text-lg max-sm:hidden flex items-center gap-5 bg-pink-300 text-gray-700 px-6 py-1.5 rounded-full cursor-pointer hover:scale-103 transition-all"
+          className="text-lg max-sm:hidden flex items-center gap-5 bg-pink-300 dark:bg-gray-700 text-black dark:text-primary  px-6 py-1.5 rounded-full cursor-pointer hover:scale-103 transition-all"
         >
-          Offerings <img src={HouseOfBerryAssets.arrow_icon} width={15} alt="Desktop Offerings Button" />
+          Offerings 
+          <img
+          src={theme ==='dark' ? HouseOfBerryAssets.arrow_pink : HouseOfBerryAssets.arrow_black}
+          alt=''
+          width={15} />
         </a>
       </div>
 
@@ -76,7 +80,7 @@ const Navbar = ({ theme, setTheme }) => {
         <a onClick={() => setSidebarOpen(false)} href="#" className="text-lg mb-4">HOME</a>
         <a onClick={() => setSidebarOpen(false)} href="#about" className="text-lg mb-4">ABOUT</a>
         <a onClick={() => setSidebarOpen(false)} href="#offerings" className="text-lg mb-4">OFFERINGS</a>
-        
+        <a onClick={() => setSidebarOpen(false)} href="#team" className="text-lg mb-4">TEAM</a>
         <a onClick={() => setSidebarOpen(false)} href="#faq" className="text-lg mb-4">FAQS</a>
         <a onClick={() => setSidebarOpen(false)}href="#contact" className="text-lg mb-4">CONTACT</a>
 

@@ -28,7 +28,7 @@ const MenuCard = ({menuData, index}) => {
         <div className="relative z-10 rounded-[10px] border border-gray-200 dark:border-gray-700 shadow-lg bg-white dark:bg-gray-900 w-[calc(100%-8px)] h-[calc(100%-8px)] p-8 flex items-center gap-6 mx-auto my-1">
 
           <div className="flex-1 ">
-            <img src={menuData.icon} alt='Menu Items' className='max-w-24 bg-white dark:bg-pink-200 rounded-full m-2' />
+            <img src={menuData.icon} alt='Menu Items' className='max-w-24 bg-none m-2' />
           </div>
           
 
