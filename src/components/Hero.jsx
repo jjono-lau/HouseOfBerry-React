@@ -1,5 +1,4 @@
 import React from "react";
-import assets from "../assets/assets";
 import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
 
 
@@ -28,8 +27,8 @@ const Hero = () => {
     
 
     <div className='relative'>
-        <img src={assets.coffee} alt="" className='w-full max-w-6xl'/>
-        <img src={assets.bgImage2} about="" className='absolute -top-40 -right-40 sm:-top-100 sm:-right-70 -z-1 dark:hidden' />
+        <img src={HouseOfBerryAssets.coffee} alt="" className='w-full max-w-6xl'/>
+        <img src={HouseOfBerryAssets.bgImage2} about="" className='absolute -top-40 -right-40 sm:-top-100 sm:-right-70 -z-1 dark:hidden' />
     </div>
 
     </div>

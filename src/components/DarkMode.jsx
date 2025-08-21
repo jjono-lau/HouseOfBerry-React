@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import assets from '../assets/assets';
-
+import HouseOfBerryAssets from '../HouseOfBerryAssets/HouseOfBerryAssets';
 const DarkMode = ({ theme, setTheme }) => {
 
 
@@ -31,14 +30,14 @@ const DarkMode = ({ theme, setTheme }) => {
         
         <img
           onClick={() => setTheme('light')}
-          src={assets.sun_icon}
+          src={HouseOfBerryAssets.sun_icon}
           className="w-full h-full object-contain"
           alt="Switch to light mode"
         />
       ) : (
         <img
           onClick={() => setTheme('dark')}
-          src={assets.moon_icon}
+          src={HouseOfBerryAssets.moon_icon}
           className="w-full h-full object-contain"
           alt="Switch to dark mode"
         />

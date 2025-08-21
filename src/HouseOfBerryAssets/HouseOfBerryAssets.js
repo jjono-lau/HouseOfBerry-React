@@ -21,6 +21,11 @@ import SaltedVanillaMatcha from './SaltedVanillaMatcha.svg'
 import BlueberryMatchaCake from './BlueberryMatchaCake.svg'
 import menu_icon_dark from './menu_icon_dark.svg'
 import menu_icon from './menu_icon.svg'  
+import bgImage2 from './bgImage2.png'
+import bgImage1 from './bgImage1.png'
+import moon_icon from './moon_icon.svg'
+import sun_icon from './sun_icon.svg'
+
 
 export const asset_logos = [
   coffee,
@@ -55,6 +60,11 @@ const HouseOfBerryAssets = {
     BlueberryMatchaCake,
     menu_icon,
     menu_icon_dark,
+    bgImage2,
+    bgImage1,
+    moon_icon,
+    sun_icon,
+
 
 
 }
