@@ -10,7 +10,6 @@ import lolMatcha from "./lolMatcha.png";
 import LYSMatcha from "./LYSMatcha.png";
 import LYSMatchapink from "./LYSMatchapink.png";
 import matcha from "./matcha.svg";
-import match256x256 from "./matcha256x256.png";
 import matchaLeaf from "./matchaLeaf.svg";
 import realMatcha from "./realMatcha.svg";
 import xoxoMatcha from "./xoxoMatcha.png";
@@ -55,7 +54,6 @@ const HouseOfBerryAssets = {
   LYSMatcha,
   LYSMatchapink,
   matcha,
-  match256x256,
   matchaLeaf,
   realMatcha,
   xoxoMatcha,
@@ -85,44 +83,43 @@ export const teamData = [
   {
     name: "Jacqueline Jiang",
     title: "CEO & founder",
-    image:
-      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    image: StrawberryMatcha,
   },
   {
     name: "Jacqueline Jiang",
     title: "Ads manager",
     image:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200",
+      BlueberryMatcha,
   },
   {
-    name: "acqueline Jiang",
+    name: "Jacqueline Jiang",
     title: "Vice president",
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop",
+      BlueberryMatchaCake,
   },
   {
     name: "Jacqueline Jiang",
     title: "Marketing & sales",
-    image: "https://randomuser.me/api/portraits/women/10.jpg",
+    image: SaltedVanillaMatcha,
   },
   {
     name: "Jacqueline Jiang",
     title: "Content marketer",
-    image: "https://randomuser.me/api/portraits/women/11.jpg",
+    image: coffee,
   },
   {
     name: "Jacqueline Jiang ",
     title: "Content writer",
-    image: "https://randomuser.me/api/portraits/men/9.jpg",
+    image: matchaLeaf,
   },
   {
     name: "Jacqueline Jiang",
     title: "Performance manager",
-    image: "https://randomuser.me/api/portraits/women/12.jpg",
+    image: matcha,
   },
   {
     name: "Jacqueline Jiang",
     title: "Senior writer",
-    image: "https://randomuser.me/api/portraits/women/14.jpg",
+    image: name_card,
   },
 ];
