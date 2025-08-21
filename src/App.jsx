@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero';
 import Serving from './components/Serving';
-import About from './components/Offerings';
+import Offerings from './components/Offerings';
+import About from './components/About';
+
 
 const App = () => {
 
@@ -15,6 +17,8 @@ const App = () => {
       <Hero />
       <Serving />
       <About />
+      <Offerings />
+      
     </div>
   )
 }
