@@ -11,6 +11,7 @@
 
 * {
   cursor:none;
+  /* cursor: pointer;  */
 }
 
 @layer base {
@@ -54,4 +55,20 @@ border-[#ffeffa] - custom border color
 
 .text-glow {
   text-shadow: 0 0 0.5px #000000, 0 0 0.5px #000000;
+}
+
+
+
+
+@keyframes pulse-gradient {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+.animate-pulse-gradient {
+  animation: pulse-gradient 3s ease-in-out infinite;
 }

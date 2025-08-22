@@ -12,8 +12,8 @@ const TeamCards = () => {
           <div key={index} className='flex max-sm:flex-col items-center gap-5 p-4 rounded-xl border border-gray-100 dark:birder-gray-700 bg-white dark:bg-gray-700 shadow-xl shadow-gray-100 dark:shadow-white/5 hover:scale-103 transition-all duration-400'>
           <img src={team.image} alt={team.name} className="w-12 h-12 rounded-full "/>
           <div className="flex1">
-            <h3 className="text-sm font-bold">{team.name}</h3>
-            <p className="text-xs opacity-70">{team.title}</p>
+            <h3 className="text-md font-bold">{team.name}</h3>
+            <p className="text-s opacity-70">{team.title}</p>
           </div>
                 
           </div>

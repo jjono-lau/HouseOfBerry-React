@@ -1,10 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 const MenuCard = ({ menuData }) => {
-  const [position, setPosition] = React.useState({ x: 150, y: 150 });
-  const [visible, setVisible] = React.useState(false);
+  const [position, setPosition] = useState({ x: 150, y: 150 });
+  const [visible, setVisible] = useState(false);
   const divRef = useRef(null);
-  const intervalRef = useRef(null);
 
   const handleMouseMove = (e) => {
     if (window.innerWidth < 768) return; // ignore mobile
@@ -12,45 +11,25 @@ const MenuCard = ({ menuData }) => {
     setPosition({ x: e.clientX - bounds.left, y: e.clientY - bounds.top });
   };
 
-  useEffect(() => {
-    if (window.innerWidth < 768) {
-      setVisible(true);
-      const bounds = divRef.current.getBoundingClientRect();
-      const radiusX = bounds.width / 2 - 150; // horizontal range
-      const centerY = bounds.height / 2; // vertical center
-      let x = 0;
-      let direction = 1; // 1 = right, -1 = left
-      const speed = 2; // pixels per frame
-
-      intervalRef.current = setInterval(() => {
-        x += speed * direction;
-        if (x > radiusX || x < -radiusX) direction *= -1;
-        setPosition({
-          x: bounds.width / 2 + x,
-          y: centerY,
-        });
-      }, 16); // ~60fps
-    }
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, []);
+  const isMobile = window.innerWidth < 768;
 
   return (
     <div
       className="flex relative overflow-hidden max-w-lg m-2 sm:m-4 rounded-xl border border-gray-200 dark:border-gray-700 shadow-2xl shadow-gray-100 dark:shadow-white/10"
-      onMouseEnter={() => window.innerWidth >= 768 && setVisible(true)}
-      onMouseLeave={() => window.innerWidth >= 768 && setVisible(false)}
+      onMouseEnter={() => !isMobile && setVisible(true)}
+      onMouseLeave={() => !isMobile && setVisible(false)}
       onMouseMove={handleMouseMove}
       ref={divRef}
     >
-      {/* Gradient Background Control */}
+      {/* Gradient Background */}
       <div
-        className={`pointer-events-none blur-2xl rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-400 w-[300px] h-[300px] absolute z-0 transition-opacity duration-500 mix-blend-lighten ${
-          visible ? "opacity-70" : "opacity-0"
-        }`}
-        style={{ top: position.y - 150, left: position.x - 150 }}
+        className={`pointer-events-none blur-2xl rounded-full bg-gradient-to-r from-pink-500 via-primary to-purple-500 w-[300px] h-[300px] absolute z-0 transition-opacity duration-500 mix-blend-lighten ${
+          visible || isMobile ? "opacity-70" : "opacity-0"
+        } ${isMobile ? "animate-pulse-gradient" : ""}`}
+        style={{
+          top: isMobile ? "50%" : position.y - 150,
+          left: isMobile ? "50%" : position.x - 150,
+        }}
       />
 
       {/* Card Content */}
