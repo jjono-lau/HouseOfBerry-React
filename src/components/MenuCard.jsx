@@ -23,8 +23,8 @@ const MenuCard = ({ menuData }) => {
     >
       {/* Gradient Background */}
       <div
-        className={`pointer-events-none blur-2xl rounded-full bg-gradient-to-r from-pink-500 via-primary to-purple-500 w-[300px] h-[300px] absolute z-0 transition-opacity duration-500 mix-blend-lighten ${
-          visible || isMobile ? "opacity-70" : "opacity-0"
+        className={`pointer-events-none blur-2xl rounded-full bg-gradient-to-r from-blue-600 via-pink-400 to-purple-500 w-[300px] h-[300px] absolute z-0 transition-opacity duration-500  ${
+          visible || isMobile ? "opacity-60" : "opacity-0"
         } ${isMobile ? "animate-pulse-gradient" : ""}`}
         style={{
           top: isMobile ? "50%" : position.y - 150,
