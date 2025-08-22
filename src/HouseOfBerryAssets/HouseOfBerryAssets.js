@@ -31,6 +31,8 @@ import name_icon from "./name_icon.svg";
 import arrow_pink from "./arrow_pink.svg";
 import arrow_black from "./arrow_black.svg";
 import phone from "./phone.svg";
+import cursor from './cursor.svg'
+
 
 export const asset_logos = [
   coffee,
@@ -75,6 +77,7 @@ const HouseOfBerryAssets = {
   arrow_pink,
   arrow_black,
   phone,
+  cursor,
 };
 
 export default HouseOfBerryAssets;

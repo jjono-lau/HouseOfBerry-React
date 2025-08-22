@@ -58,11 +58,11 @@ const Questions = () => {
             onClick={() => toggle(index)}
           >
             <div className="flex justify-between items-center">
-              <h3 className="text-base font-semibold">{item.question}</h3>
+              <h1 className="text-base  text-xl font-semibold">{item.question}</h1>
               <span className="text-xl">{openIndex === index ? "−" : "+"}</span>
             </div>
             {openIndex === index && (
-              <p className="mt-2 text-sm opacity-80">{item.answer}</p>
+              <p className="mt-2 text-md opacity-90">{item.answer}</p>
             )}
           </div>
         ))}

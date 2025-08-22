@@ -10,6 +10,7 @@ import x_logo from "./x_logo.svg";
 import x_logo_black from "./x_logo-black.png";
 import x_logo_white from "./x_logo-white.png";
 
+
 const BrandAssets = {
   fb,
   fb_2,
@@ -22,6 +23,7 @@ const BrandAssets = {
   x_logo,
   x_logo_black,
   x_logo_white,
+
 };
 
 export default BrandAssets;

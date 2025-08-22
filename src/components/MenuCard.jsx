@@ -63,7 +63,7 @@ const MenuCard = ({ menuData }) => {
           />
         </div>
         <div className="flex-1">
-          <h3 className="font-bold">{menuData.title}</h3>
+          <h1 className="font-bold">{menuData.title}</h1>
           <p className="text-sm mt-2">{menuData.description}</p>
         </div>
       </div>
