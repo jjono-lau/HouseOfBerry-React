@@ -37,7 +37,7 @@ const Contact = ({ theme }) => {
   return (
     <div
       id="contact"
-      className="flex flex-col items-center gap-7 p-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-800 dark:text-white"
+      className="flex flex-col items-center gap-7 p-4 sm:px-12 lg:px-24 xl:px-40 scroll-mt-30 text-gray-800 dark:text-white"
     >
       <Title title="Catch The Cart" desc="We'd love to hear from you!" />
 
