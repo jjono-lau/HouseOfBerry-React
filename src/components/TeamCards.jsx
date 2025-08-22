@@ -4,7 +4,7 @@ import { teamData } from "../HouseOfBerryAssets/HouseOfBerryAssets";
 
 const TeamCards = () => {
   return (
-    <div id="team" className="flex flex-col items-center gap-7 p-4 sm:px-12 lg:px-24 xl:px-40 scroll-mt-30 text-gray-800 dark:text-white">
+    <div id="team" className="pb-30 flex flex-col items-center gap-7 p-4 sm:px-12 lg:px-24 xl:px-40 scroll-mt-30 text-gray-800 dark:text-white">
       <Title title="TeamCards" desc="Come Meet Our Team" />
 
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">

@@ -3,6 +3,25 @@ import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
 import BrandAssets from "../BrandAssets/BrandAssets";
 
 const Footer = ({ theme }) => {
+  const footerLinks = [
+    { href: "#home", label: "HOME" },
+    { href: "#about", label: "ABOUT" },
+    { href: "#offerings", label: "OFFERINGS" },
+    { href: "#team", label: "TEAM" },
+    { href: "#faq", label: "FAQS" },
+    { href: "#contact", label: "CONTACT" },
+  ];
+
+  const handleClick = (href) => {
+    const section = document.querySelector(href);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 100, // adjust for navbar height
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="bg-primary dark:bg-black pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40">
       {/* Footer top */}
@@ -18,12 +37,20 @@ const Footer = ({ theme }) => {
             House of Berry isn't just about coffee or matcha. It's about turning everyday moments into something special — one sip at a time.
           </p>
           <ul className="flex flex-wrap gap-4 sm:gap-8 text-sm">
-            <li><a className="hover:text-pink-400" href="#hero">HOME</a></li>
-            <li><a className="hover:text-pink-400" href="#about">ABOUT</a></li>
-            <li><a className="hover:text-pink-400" href="#offerings">OFFERINGS</a></li>
-            <li><a className="hover:text-pink-400" href="#team">TEAM</a></li>
-            <li><a className="hover:text-pink-400" href="#faq">FAQS</a></li>
-            <li><a className="hover:text-pink-400" href="#contact">CONTACT</a></li>
+            {footerLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleClick(link.href);
+                  }}
+                  className="hover:text-pink-400 text-gray-600 dark:text-gray-400 transition-colors"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -57,7 +84,7 @@ const Footer = ({ theme }) => {
           <img className="h-8" src={BrandAssets.ln} alt="LinkedIn Logo" />
           <img
             className="h-8"
-            src={theme === 'dark' ? BrandAssets.x_logo_white : BrandAssets.x_logo_black}
+            src={theme === "dark" ? BrandAssets.x_logo_white : BrandAssets.x_logo_black}
             alt="X/Twitter Logo"
           />
         </div>

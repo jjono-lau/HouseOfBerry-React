@@ -25,7 +25,7 @@ const About = () => {
     return (
         <div
             id='about'
-            className='flex flex-col items-center gap-7 pb-30 px-4 sm:px-12 lg:px-24 xl:px-40 text-gray-700 dark:text-primary scroll-mt-30'
+            className='pb-30 flex flex-col items-center gap-7  px-4 sm:px-12 lg:px-24 xl:px-40 text-gray-700 dark:text-primary scroll-mt-30'
         >
             <Title title='About Us' desc='Learn more about our mission and values.' />
 

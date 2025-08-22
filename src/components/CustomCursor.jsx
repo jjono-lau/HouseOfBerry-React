@@ -59,7 +59,7 @@ const CustomCursor = () => {
       {/* Outline ring */}
       <div
         ref={outlineRef}
-        className="fixed top-0 left-0 h-12 w-12 rounded-full border border-pink-200 pointer-events-none z-[999]"
+        className="fixed top-2 left-0.5 h-12 w-12 rounded-full border border-pink-200 pointer-events-none z-[999]"
       />
 
       {/* Cursor image */}
@@ -67,7 +67,7 @@ const CustomCursor = () => {
         ref={dotRef}
         src={HouseOfBerryAssets.cursor}
         alt="cursor"
-        className="fixed top-0 left-0 w-7 h-7 pointer-events-none z-[999]"
+        className="fixed top-2 left-0.5  w-7 h-7 pointer-events-none z-[999]"
       />
     </>
   );

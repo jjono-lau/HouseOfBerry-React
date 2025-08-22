@@ -46,7 +46,7 @@ const Questions = () => {
   return (
     <div
       id="faq"
-      className="flex flex-col items-center gap-7 p-4 sm:px-12 lg:px-24 xl:px-40 scroll-mt-30 text-gray-800 dark:text-white"
+      className=" pb-30 bg-primary dark:bg-gray-600  flex flex-col items-center gap-7 p-4 sm:px-12 lg:px-24 xl:px-40 scroll-mt-30 text-gray-800 dark:text-white"
     >
       <Title title="FAQ" desc="Frequently Asked Questions" />
 
@@ -54,7 +54,7 @@ const Questions = () => {
         {faqs.map((item, index) => (
           <div
             key={index}
-            className="p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-primary dark:bg-gray-700 shadow-md hover:scale-[1.01] transition-all duration-300 cursor-pointer"
+            className="p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-700 shadow-md hover:scale-[1.01] transition-all duration-300 cursor-pointer"
             onClick={() => toggle(index)}
           >
             <div className="flex justify-between items-center">

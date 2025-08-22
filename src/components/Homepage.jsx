@@ -3,17 +3,17 @@ import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
 
 
 
-// A hero section is the prominent visual element that appears “above the fold”—meaning it’s visible without scrolling—at the top of a webpage, typically spanning the entire screen. It’s the first content visitors see when landing on your website, making it crucial for establishing your brand’s identity and conveying your core message.
+// A Homepage section is the prominent visual element that appears “above the fold”—meaning it’s visible without scrolling—at the top of a webpage, typically spanning the entire screen. It’s the first content visitors see when landing on your website, making it crucial for establishing your brand’s identity and conveying your core message.
 
 
-const Hero = () => {
+const Homepage = () => {
   return (
     <div
-  id="hero"
-  className="flex flex-col items-center gap-6 py-20 px-4 sm:px-12 lg:px-24 xl:px-40 text-center w-full  overflow-hidden text-gray-700 dark:text-primary">
+  id="home"
+  className="pb-30 flex flex-col items-center gap-6 py-20 px-4 sm:px-12 lg:px-24 xl:px-40 text-center w-full  overflow-hidden text-gray-700 dark:text-primary">
 
 
-      {/* Group Profiles */}Hero.jsx file  to be changed :))
+      {/* Group Profiles */}Homepage.jsx file  to be changed :))
 
       <div className="inline-flex items-center gap-2 border border-black-300 p-1.5 pr-4 rounded-full">
         <img className="w-15" src={HouseOfBerryAssets.matchaLeaf} alt="" />
@@ -35,4 +35,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Homepage;
