@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DarkMode from "./DarkMode";
 import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
+import { motion } from "motion/react";
 
 const Navbar = ({ theme, setTheme }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -15,7 +16,6 @@ const Navbar = ({ theme, setTheme }) => {
     { href: "#contact", label: "CONTACT" },
   ];
 
-  // Scroll listener to update active link based on section position
   useEffect(() => {
     const handleScroll = () => {
       let current = activeLink;
@@ -24,7 +24,7 @@ const Navbar = ({ theme, setTheme }) => {
       navLinks.forEach((link) => {
         const section = document.querySelector(link.href);
         if (section) {
-          const distance = Math.abs(section.getBoundingClientRect().top - 100); // navbar offset
+          const distance = Math.abs(section.getBoundingClientRect().top - 100);
           if (distance < minDistance) {
             minDistance = distance;
             current = link.href;
@@ -36,43 +36,49 @@ const Navbar = ({ theme, setTheme }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // initialize on load
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Smooth scroll when clicking links and remove #id from URL
   const handleClick = (href) => {
     const section = document.querySelector(href);
     if (section) {
       window.scrollTo({
-        top: section.offsetTop - 100, // adjust for navbar height
+        top: section.offsetTop - 100,
         behavior: "smooth",
       });
-
       setActiveLink(href);
-
-      // Remove the hash from URL without reloading
       window.history.replaceState(null, "", " ");
-
       setSidebarOpen(false);
     }
   };
 
   return (
-    <div className="flex justify-between items-center px-4 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium bg-primary dark:bg-black">
-      
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="flex justify-between items-center px-4 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium bg-primary dark:bg-black"
+    >
       {/* Logo */}
-      <a href="#home" className="relative z-30" onClick={(e) => { e.preventDefault(); handleClick("#home"); }}>
+      <a
+        href="#home"
+        className="relative z-30 flex-shrink-0"
+        onClick={(e) => {
+          e.preventDefault();
+          handleClick("#home");
+        }}
+      >
         <img
           src={theme === "dark" ? HouseOfBerryAssets.logo_dark : HouseOfBerryAssets.logo}
-          className="w-22 h-auto flex-shrink-0"
+          className="w-[88px] h-auto"
           alt="House of Berry Logo"
         />
       </a>
 
-      {/* Desktop links */}
-      <div className="hidden sm:flex items-center gap-5 dark:text-primary">
+      {/* Centered Links */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex items-center gap-5 dark:text-primary">
         {navLinks.map((link) => (
           <a
             key={link.href}
@@ -90,22 +96,22 @@ const Navbar = ({ theme, setTheme }) => {
         ))}
       </div>
 
-      {/* Right side */}
+      {/* Right Side */}
       <div className="flex items-center gap-2 sm:gap-4">
         <DarkMode theme={theme} setTheme={setTheme} />
 
-        {/* Mobile menu icon */}
+        {/* Mobile/Menu button: show on sm+ up to md */}
         <img
           src={theme === "dark" ? HouseOfBerryAssets.menu_icon_dark : HouseOfBerryAssets.menu_icon}
           alt="Mobile Menu Icon"
-          className="w-7 h-7 sm:hidden cursor-pointer"
+          className="w-7 h-7 md:hidden cursor-pointer"
           onClick={() => setSidebarOpen(true)}
         />
 
-        {/* Desktop Offering button */}
+        {/* Offerings button: show only lg+ */}
         <a
           href="#offerings"
-          className="text-lg max-sm:hidden flex items-center gap-5 bg-pink-300 dark:bg-gray-700 text-black dark:text-primary px-6 py-1.5 rounded-full cursor-pointer hover:scale-103 transition-all"
+          className="hidden lg:flex items-center gap-5 bg-pink-300 dark:bg-gray-700 text-black dark:text-primary px-6 py-1.5 rounded-full cursor-pointer hover:scale-103 transition-all text-lg flex-shrink-0"
           onClick={(e) => {
             e.preventDefault();
             handleClick("#offerings");
@@ -120,9 +126,9 @@ const Navbar = ({ theme, setTheme }) => {
         </a>
       </div>
 
-      {/* Mobile sidebar */}
+      {/* Mobile Sidebar */}
       <div
-        className={`sm:hidden fixed top-0 bottom-0 right-0 ${
+        className={`md:hidden fixed top-0 bottom-0 right-0 ${
           sidebarOpen ? "w-60 pl-10" : "w-0 overflow-hidden"
         } min-h-screen flex flex-col bg-primary dark:bg-black dark:text-primary text-black pt-20 transition-all overflow-y-auto`}
       >
@@ -151,7 +157,7 @@ const Navbar = ({ theme, setTheme }) => {
           </a>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

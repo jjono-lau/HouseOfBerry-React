@@ -1,5 +1,6 @@
 import React from "react";
 import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
+import { motion } from "motion/react";
 
 
 
@@ -15,21 +16,66 @@ const Homepage = () => {
 
       {/* Group Profiles */}Homepage.jsx file  to be changed :))
 
-      <div className="inline-flex items-center gap-2 border border-black-300 p-1.5 pr-4 rounded-full">
+      <motion.div 
+      initial={{opacity:0, y:20}}
+      whileInView={{opacity:1, y:0}}
+      transition={{duration:0.5, delay:0.6}}
+      viewport={{once: true}}
+      className="inline-flex items-center gap-2 border border-black-300 p-1.5 pr-4 rounded-full">
         <img className="w-15" src={HouseOfBerryAssets.matchaLeaf} alt="" />
         <p className="text-s font-medium">Presented by House Of Berry</p>
-      </div>
+      </motion.div>
 
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-[84px] font-medium xl:leading-[95px] max-w-5xl">Serving <span className="bg-gradient-to-b from-[#4CAF50] to-[#A8E6A3] bg-clip-text text-transparent">Matcha</span> and <span className="bg-gradient-to-t from-[#4B2E2A] to-[#C19A6B] bg-clip-text text-transparent">Coffee</span> with love, <br/> and on the go</h1>
+        <motion.h1
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.7 }}
+  viewport={{ once: true }}
+  className="relative text-4xl sm:text-5xl md:text-6xl xl:text-[84px] 
+             font-medium xl:leading-[95px] max-w-5xl"
+>
+  Serving{" "}
+  <span className="bg-gradient-to-b from-[#4CAF50] to-[#A8E6A3] bg-clip-text text-transparent">
+    Matcha
+  </span>{" "}
+  and{" "}
+  <span className="bg-gradient-to-t from-[#4B2E2A] to-[#C19A6B] bg-clip-text text-transparent">
+    Coffee
+  </span>{" "}
+  with love,
+  <br /> and on the go
+
+  {/* decorative image centered vertically, responsive inset from right */}
+  <img
+    src={HouseOfBerryAssets.bgImage1}
+    alt=""
+    className="absolute top-1/2 -translate-y-1/2 
+               right-10 sm:right-6 md:right-10 lg:right-50 xl:right-10
+               w-[18vw] max-w-[200px] min-w-[100px]
+               opacity-30 -z-10 dark:hidden"
+  />
+</motion.h1>
+
+
       
-      <p className="italic text-glow">House of Berry isn't just about coffee or matcha. It's about turning<br/> everyday moments into something special &mdash; one sip at a time.</p> 
+      <motion.h3
+      initial={{opacity:0, y:30}}
+      whileInView={{opacity:1, y:0}}
+      transition={{duration:0.5, delay:1}}
+      viewport={{once: true}}
+       className="italic text-lg text-glow">House of Berry isn't just about coffee or matcha. It's about turning<br/> everyday moments into something special &mdash; one sip at a time.</motion.h3> 
     
 
-    <div className='relative'>
+    <motion.div
+    initial={{opacity:0, scale:0.8}}
+      whileInView={{opacity:1, scale:1}}
+      transition={{duration:1, delay:0.9}}
+      viewport={{once: true}}
+
+     className='relative flex justify-center'>
         <img src={HouseOfBerryAssets.coffee} alt="" className='w-full max-w-6xl'/>
-        <img src={HouseOfBerryAssets.bgImage2} about="" className='absolute -top-40 -right-40 sm:-top-100 sm:-right-70 -z-1 dark:hidden' />
-    </div>
+    </motion.div>
 
     </div>
   );

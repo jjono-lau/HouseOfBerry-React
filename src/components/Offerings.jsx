@@ -2,7 +2,7 @@ import React from 'react'
 import Title from './Title';
 import MenuCard from './MenuCard';
 import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
-
+import { motion } from "motion/react";
 
 const Offerings = () => {
 
@@ -30,27 +30,35 @@ const Offerings = () => {
   ]
 
   return (
-    
+    <motion.div 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ staggerChildren: 0.2 }}
+      id='offerings' 
+      className='relative flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pb-30 scroll-mt-30 text-gray-700 dark:text-white bg-primary dark:bg-gray-600'
+    >
 
-    // id='offerings' allows for the offering section to be linked to from the navbar
+      <Title 
+        title='The Berry Difference' 
+        desc="Matcha made fun, flavour made bold, and moments made memorable. We're not just whisking drinks &mdash; we&apos;re shaking up expectations. Here&apos;s what makes us different..."
+      />
 
-    <div id='offerings' className=' pb-30 relative flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 scroll-mt-30 text-gray-700 dark:text-white bg-primary dark:bg-gray-600' >
+      <img 
+        src={HouseOfBerryAssets.bgImage2} 
+        alt="" 
+        className='absolute -top-110 -left-70 z-1 dark:hidden'
+      />
+<div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 mx-auto">
+  {menuData.map((menu, index) => (
+    <MenuCard key={index} menuData={menu} index={index} />
+  ))}
+</div>
 
 
 
 
-      {/* can use ' when " " covers the setence otherwise can use &apos; or put curly brackets around{ \' } */}
-
-      <Title title='The Berry Difference' desc="Matcha made fun, flavour made bold, and moments made memorable. We're not just whisking drinks &mdash; we&apos;re shaking up expectations. Here&apos;s what makes us different..."/>
-      <img src={HouseOfBerryAssets.bgImage2} alt="" className='absolute -top-110 -left-70 -z-1 dark:hidden'/>
-
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full'>
-        {menuData.map((menu, index) => (
-          <MenuCard key={index} menuData={menu} index={index} />
-        ))}
-      </div>
-
-    </div>
+    </motion.div>
   )
 }
 

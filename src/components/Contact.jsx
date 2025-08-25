@@ -2,6 +2,7 @@ import React from "react";
 import Title from "./Title";
 import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
 import toast from "react-hot-toast";
+import { motion } from "motion/react";
 
 // [IMPORTANT] The access key is a public key (not API Key)
 // Hence there is no need to hide the key :)
@@ -60,7 +61,7 @@ const Contact = ({ theme }) => {
         </div>
 
         <div>
-          <p className="mb-2 text-xl font-medium">Email Address</p>
+          <p className="mb-2 text-xl font-semibold">Email Address</p>
           <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-pink-300">
             <img src={HouseOfBerryAssets.email_icon} alt="" className="h-10" />
             <input
@@ -76,7 +77,7 @@ const Contact = ({ theme }) => {
         {/* Phone Number? */}
 
         <div className="sm:col-span-2">
-          <p className="mb-2 text-xl font-medium">Phone Number</p>
+          <p className="mb-2 text-xl font-semibold">Phone Number</p>
           <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-pink-300">
             <img src={HouseOfBerryAssets.phone} alt="" className="h-9 pt-2" />
             <input
@@ -92,7 +93,7 @@ const Contact = ({ theme }) => {
 
 
 <div className="sm:col-span-2 relative">
-  <p className="mb-2 text-xl font-medium">Leave A Message</p>
+  <p className="mb-2 text-xl font-semibold">Leave A Message</p>
 
   <div className="relative flex items-start rounded-lg border border-gray-300 dark:border-pink-300">
     <img

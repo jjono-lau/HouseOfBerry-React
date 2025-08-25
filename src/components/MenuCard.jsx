@@ -1,6 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
+import { motion } from "motion/react";
 
-const MenuCard = ({ menuData }) => {
+
+
+const MenuCard = ({ menuData, index }) => {
   const [position, setPosition] = useState({ x: 150, y: 150 });
   const [visible, setVisible] = useState(false);
   const divRef = useRef(null);
@@ -14,7 +17,12 @@ const MenuCard = ({ menuData }) => {
   const isMobile = window.innerWidth < 768;
 
   return (
-    <div
+    <motion.div
+      initial={{opacity:0, y:30}}
+      whileInView={{opacity:1, y:0}}
+      transition={{duration:0.5, delay: index * 0.2}}
+      viewport={{once:true}}
+
       className="flex relative overflow-hidden max-w-lg m-2 sm:m-4 rounded-xl border border-gray-200 dark:border-gray-700 shadow-2xl shadow-gray-100 dark:shadow-white/10"
       onMouseEnter={() => !isMobile && setVisible(true)}
       onMouseLeave={() => !isMobile && setVisible(false)}
@@ -46,7 +54,7 @@ const MenuCard = ({ menuData }) => {
           <p className="text-sm mt-2">{menuData.description}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
