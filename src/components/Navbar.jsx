@@ -111,7 +111,7 @@ const Navbar = ({ theme, setTheme }) => {
         {/* Offerings button: show only lg+ */}
         <a
           href="#offerings"
-          className="hidden lg:flex items-center gap-5 bg-pink-300 dark:bg-gray-700 text-black dark:text-primary px-6 py-1.5 rounded-full cursor-pointer hover:scale-103 transition-all text-lg flex-shrink-0"
+          className="hidden lg:flex items-center gap-5 bg-pink-300 hover:bg-pink-400 dark:bg-gray-700 dark:hover:bg-gray-600 text-black dark:text-primary px-6 py-1.5 rounded-full cursor-pointer hover:scale-103 transition-all text-lg flex-shrink-0"
           onClick={(e) => {
             e.preventDefault();
             handleClick("#offerings");

@@ -9,7 +9,8 @@ import ig from "./Instagram_Glyph_Gradient.svg";
 import x_logo from "./x_logo.svg";
 import x_logo_black from "./x_logo-black.png";
 import x_logo_white from "./x_logo-white.png";
-
+import tiktok_circle from './TikTok_Icon_Black_Circle.png';
+import tiktok_sqaure from './TikTok_Icon_Black_Square.png';
 
 const BrandAssets = {
   fb,
@@ -23,6 +24,8 @@ const BrandAssets = {
   x_logo,
   x_logo_black,
   x_logo_white,
+  tiktok_circle,
+  tiktok_sqaure
 
 };
 

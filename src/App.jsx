@@ -11,6 +11,11 @@ import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
 
+
+
+import DeveloperTests from "./components/DeveloperTests";
+
+
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
@@ -27,6 +32,7 @@ const App = () => {
       <Questions />
       <TheCart theme={theme} />
       <Footer theme={theme} />
+      <DeveloperTests theme={theme} />
     </div>
   );
 };

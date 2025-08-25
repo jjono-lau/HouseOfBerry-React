@@ -16,7 +16,7 @@ const Footer = ({ theme }) => {
     const section = document.querySelector(href);
     if (section) {
       window.scrollTo({
-        top: section.offsetTop - 100, // adjust for navbar height
+        top: section.offsetTop - 100,
         behavior: "smooth",
       });
     }
@@ -25,18 +25,62 @@ const Footer = ({ theme }) => {
   return (
     <div className="bg-primary dark:bg-black pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40">
       {/* Footer top */}
-      <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
-        {/* Logo + About + Nav */}
-        <div className="space-y-5 text-sm text-gray-600 dark:text-gray-400 w-full lg:w-auto">
-          <img
-            src={theme === "dark" ? HouseOfBerryAssets.logo_dark : HouseOfBerryAssets.logo}
-            className="w-32 sm:w-44"
-            alt="House of Berry Logo"
-          />
-          <p className="max-w-md">
-            House of Berry isn't just about coffee or matcha. It's about turning everyday moments into something special — one sip at a time.
+
+      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-center gap-10">
+        {/* Left column: Logo + About */}
+        <div className="text-sm text-gray-600 dark:text-gray-400 w-full lg:max-w-[45%] flex flex-col justify-start">
+          
+          <div className="w-full flex justify-center lg:justify-start">
+            <img
+              src={
+                theme === "dark"
+                  ? HouseOfBerryAssets.logo_dark
+                  : HouseOfBerryAssets.logo
+              }
+              className="w-32 sm:w-44"
+              alt="House of Berry Logo"
+            />
+          </div>
+
+          <p className="mt-3">
+            House of Berry isn't just about coffee or matcha. It's about turning
+            everyday moments into something special — one sip at a time. Every
+            drink is crafted with care, using the highest quality ingredients.
           </p>
-          <ul className="flex flex-wrap gap-4 sm:gap-8 text-sm">
+        </div>
+
+        {/* Right column: TikTok + Navbar links */}
+        <div className="flex flex-col w-full gap-6 justify-between">
+          {/* TikTok section (half-and-half) */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            {/* Left half: heading + paragraph */}
+            <div className="w-full sm:w-1/2 flex flex-col justify-center">
+              <h3 className="font-semibold">Follow Me On TikTok</h3>
+              <p className="text-sm mt-1">
+                Check me out on TikTok for fun content and updates!
+              </p>
+            </div>
+
+            {/* Right half: button */}
+            <div className="w-full sm:w-1/2 flex justify-start sm:justify-end">
+              <a
+                href="https://www.tiktok.com/@houseofberrynz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-pink-300 hover:bg-pink-400 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-semibold rounded px-6 py-3"
+              >
+                <img
+                  src={BrandAssets.tiktok_circle}
+                  className="h-8"
+                  alt="TikTok Logo"
+                />
+                Follow me on TikTok @houseofberrynz
+              </a>
+            </div>
+          </div>
+
+          {/* Navbar links */}
+          <ul className="flex flex-wrap gap-4 sm:gap-8 text-sm justify-start sm:justify-between">
             {footerLinks.map((link) => (
               <li key={link.href}>
                 <a
@@ -53,24 +97,6 @@ const Footer = ({ theme }) => {
             ))}
           </ul>
         </div>
-
-        {/* Mailing list */}
-        <div className="text-gray-600 dark:text-gray-400 w-full lg:w-96">
-          <h3 className="font-semibold">Join Our Mailing List</h3>
-          <p className="text-sm mt-2 mb-4">
-            The latest updates on my journey to bringing the best matcha to New Zealand. With secret menu drops, you can't miss!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-2 w-full">
-            <input
-              type="email"
-              placeholder="Enter Your Email"
-              className="w-full sm:flex-1 p-3 text-sm outline-none rounded text-gray-800 dark:text-gray-300 bg-transparent border border-gray-300 dark:border-gray-400"
-            />
-            <button className="w-full sm:w-auto bg-gray-600 text-primary rounded px-6 py-3">
-              Subscribe
-            </button>
-          </div>
-        </div>
       </div>
 
       <hr className="border-gray-300 dark:border-gray-600 my-6" />
@@ -84,7 +110,11 @@ const Footer = ({ theme }) => {
           <img className="h-8" src={BrandAssets.ln} alt="LinkedIn Logo" />
           <img
             className="h-8"
-            src={theme === "dark" ? BrandAssets.x_logo_white : BrandAssets.x_logo_black}
+            src={
+              theme === "dark"
+                ? BrandAssets.x_logo_white
+                : BrandAssets.x_logo_black
+            }
             alt="X/Twitter Logo"
           />
         </div>
