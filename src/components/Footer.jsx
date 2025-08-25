@@ -23,7 +23,7 @@ const Footer = ({ theme }) => {
   };
 
   return (
-    <div className="bg-primary dark:bg-black pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40">
+    <div className="bg-primary dark:bg-black pt-10 sm:pt-10 mt-20 sm:mt-40 px-10 sm:px-10 lg:px-15 xl:px-20">
       {/* Footer top */}
 
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-center gap-10">
@@ -62,25 +62,26 @@ const Footer = ({ theme }) => {
             </div>
 
             {/* Right half: button */}
-            <div className="w-full sm:w-1/2 flex justify-start sm:justify-end">
-              <a
-                href="https://www.tiktok.com/@houseofberrynz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-pink-300 hover:bg-pink-400 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-semibold rounded px-6 py-3"
-              >
-                <img
-                  src={BrandAssets.tiktok_circle}
-                  className="h-8"
-                  alt="TikTok Logo"
-                />
-                Follow me on TikTok @houseofberrynz
-              </a>
-            </div>
+            <div className="w-full sm:w-1/2 flex justify-center sm:justify-end">
+  <a
+    href="https://www.tiktok.com/@houseofberrynz"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-full sm:w-auto inline-flex justify-center sm:justify-start items-center gap-2 bg-pink-300 hover:bg-pink-400 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-semibold rounded px-6 py-3"
+  >
+    <img
+      src={BrandAssets.tiktok_circle}
+      className="h-8"
+      alt="TikTok Logo"
+    />
+    Follow me on TikTok @houseofberrynz
+  </a>
+</div>
+
           </div>
 
           {/* Navbar links */}
-          <ul className="flex flex-wrap gap-4 sm:gap-8 text-sm justify-start sm:justify-between">
+          <ul className="flex flex-wrap gap-4 sm:gap-8 text-sm justify-between w-full">
             {footerLinks.map((link) => (
               <li key={link.href}>
                 <a
