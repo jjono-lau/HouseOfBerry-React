@@ -39,16 +39,25 @@ const Contact = ({ theme }) => {
     <div
       id="contact"
       className="pb-30 flex flex-col items-center gap-7 p-4 sm:px-12 lg:px-24 xl:px-40 scroll-mt-30 text-gray-800 dark:text-white"
+
     >
+     <img 
+        src={HouseOfBerryAssets.bgImage3} 
+        alt="" 
+        className='absolute -left-230 top-1150 z-1 dark:hidden'
+      />
+
       <Title title="Catch The Cart" desc="We'd love to hear from you!" />
 
       <form
         onSubmit={onSubmit}
-        className="grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full"
+        className="grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full z-100"
       >
         <div>
+        
           <p className="text-xl font-semibold mb-2">Your Name</p>
           <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-pink-300">
+          
             <img src={HouseOfBerryAssets.name_icon} alt="" className="h-10" />
             <input
               name="name"
@@ -59,7 +68,7 @@ const Contact = ({ theme }) => {
             />
           </div>
         </div>
-
+        
         <div>
           <p className="mb-2 text-xl font-semibold">Email Address</p>
           <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-pink-300">

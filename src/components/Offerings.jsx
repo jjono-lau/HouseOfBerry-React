@@ -45,7 +45,7 @@ const Offerings = () => {
       />
 
       <img 
-        src={HouseOfBerryAssets.bgImage2} 
+        src={HouseOfBerryAssets.bgImage3} 
         alt="" 
         className='absolute -top-110 -left-70 z-1 dark:hidden'
       />

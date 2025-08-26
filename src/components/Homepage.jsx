@@ -48,7 +48,7 @@ const Homepage = () => {
 
   {/* decorative image centered vertically, responsive inset from right */}
   <img
-    src={HouseOfBerryAssets.bgImage1}
+    src={HouseOfBerryAssets.bgImage2}
     alt=""
     className="absolute top-1/2 -translate-y-1/2 
                right-10 sm:right-6 md:right-10 lg:right-50 xl:right-10

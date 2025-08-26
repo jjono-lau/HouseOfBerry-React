@@ -50,7 +50,7 @@ const About = () => {
               className="w-full rounded-xl"
             />
             <h3 className="mt-3 mb-2 text-lg font-semibold">{about.title}</h3>
-            <p className="text-sm opacity-80 w-5/6">{about.description}</p>
+            <p className="text-md opacity-90 w-5/6">{about.description}</p>
           </motion.div>
         ))}
       </div>

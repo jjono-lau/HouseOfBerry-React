@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Title from "./Title";
-
+import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
 const faqs = [
   {
     question: "What is matcha?",
@@ -50,7 +50,7 @@ const Questions = () => {
     >
       <Title title="FAQ" desc="Frequently Asked Questions" />
 
-      <div className="w-full max-w-3xl flex flex-col gap-4">
+      <div className="w-full max-w-3xl flex flex-col gap-4 z-100">
         {faqs.map((item, index) => (
           <div
             key={index}

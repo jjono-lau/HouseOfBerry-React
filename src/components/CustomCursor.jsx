@@ -8,18 +8,20 @@ const CustomCursor = () => {
   const position = useRef({ x: 0, y: 0 });
 
   const [showCursor, setShowCursor] = useState(false);
+  const [devToolsOpen, setDevToolsOpen] = useState(false);
 
-  // Detect desktop devices only (fine pointer)
   useEffect(() => {
     const isMobileOrTablet = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
 
     if (hasFinePointer && !isMobileOrTablet) {
       setShowCursor(true);
+      // Hide native cursor by default
+      document.body.style.cursor = "none";
     }
   }, []);
 
-  // Mouse tracking animation
+  // Mouse tracking
   useEffect(() => {
     if (!showCursor) return;
 
@@ -52,22 +54,47 @@ const CustomCursor = () => {
     return () => document.removeEventListener("mousemove", handleMouseMove);
   }, [showCursor]);
 
-  if (!showCursor) return null; // fallback: native cursor on mobile/tablet
+  // Detect DevTools
+  useEffect(() => {
+    if (!showCursor) return;
+
+    const checkDevTools = () => {
+      const threshold = 160;
+      const open =
+        window.outerWidth - window.innerWidth > threshold ||
+        window.outerHeight - window.innerHeight > threshold;
+
+      setDevToolsOpen(open);
+
+      // If DevTools is open, show the native cursor
+      document.body.style.cursor = open ? "auto" : "none";
+    };
+
+    window.addEventListener("resize", checkDevTools);
+    window.addEventListener("mousemove", checkDevTools);
+    checkDevTools();
+
+    return () => {
+      window.removeEventListener("resize", checkDevTools);
+      window.removeEventListener("mousemove", checkDevTools);
+      document.body.style.cursor = "auto";
+    };
+  }, [showCursor]);
+
+  if (!showCursor) return null;
 
   return (
     <>
-      {/* Outline ring */}
+      {/* Always render custom cursor */}
       <div
         ref={outlineRef}
         className="fixed top-2 left-0.5 h-12 w-12 rounded-full border border-pink-200 pointer-events-none z-[999]"
       />
-
-      {/* Cursor image */}
       <img
         ref={dotRef}
         src={HouseOfBerryAssets.cursor}
         alt="cursor"
-        className="fixed top-2 left-0.5  w-7 h-7 pointer-events-none z-[999]"
+        className="fixed top-2 left-0.5 w-7 h-7 pointer-events-none z-[999]"
       />
     </>
   );

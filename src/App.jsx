@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Homepage";
-import Serving from "./components/Serving";
+import Socials from "./components/Socials";
 import Offerings from "./components/Offerings";
 import About from "./components/About";
 import Questions from "./components/Questions";
@@ -25,10 +25,11 @@ const App = () => {
       <Toaster />
       <Navbar theme={theme} setTheme={setTheme} />
       <Hero />
-      <Serving />
+
       <About />
       <Offerings />
       <TeamCards />
+            <Socials />
       <Questions />
       <TheCart theme={theme} />
       <Footer theme={theme} />
