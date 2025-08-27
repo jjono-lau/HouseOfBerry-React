@@ -106,10 +106,10 @@ const Footer = ({ theme }) => {
       <div className="pb-6 text-sm text-gray-500 dark:text-gray-400 flex flex-col sm:flex-row justify-center sm:justify-between gap-4 flex-wrap items-center">
         <p>Copyright 2025 &copy; HouseOfBerry - All Right Reserved.</p>
         <div className="flex gap-4 mt-2 sm:mt-0">
-          <img className="h-8" src={BrandAssets.fb} alt="Facebook Logo" />
-          <img className="h-8" src={BrandAssets.ig} alt="Instagram Logo" />
-          <img className="h-8" src={BrandAssets.ln} alt="LinkedIn Logo" />
-          <img
+          <a href='#placeholder'target="_blank" rel="noopener noreferrer" ><img className="h-8" src={BrandAssets.fb} alt="Facebook Logo" /></a>
+          <a href='https://www.instagram.com/houseofberrynz/'target="_blank" rel="noopener noreferrer" ><img className="h-8" src={BrandAssets.ig} alt="Instagram Logo" /> </a>
+          <a href='https://www.linkedin.com/in/jjacquelinejiang/'target="_blank" rel="noopener noreferrer" > <img className="h-8" src={BrandAssets.ln} alt="LinkedIn Logo" /> </a>
+          <a href='#placeholder' target="_blank" rel="noopener noreferrer" ><img
             className="h-8"
             src={
               theme === "dark"
@@ -117,7 +117,7 @@ const Footer = ({ theme }) => {
                 : BrandAssets.x_logo_black
             }
             alt="X/Twitter Logo"
-          />
+          /></a>
         </div>
       </div>
     </div>

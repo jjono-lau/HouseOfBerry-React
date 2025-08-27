@@ -33,6 +33,7 @@ import arrow_pink from "./svg/arrow_pink.svg";
 import arrow_black from "./svg/arrow_black.svg";
 import phone from "./svg/phone.svg";
 import cursor from './svg/cursor.svg'
+import stall from './png/Stall.png'
 
 import about_vid from "./mp4/About.mp4"
 
@@ -82,6 +83,7 @@ const HouseOfBerryAssets = {
   phone,
   cursor,
   about_vid,
+  stall
 };
 
 export default HouseOfBerryAssets;

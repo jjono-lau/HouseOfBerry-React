@@ -34,7 +34,23 @@ const faqs = [
     answer:
       "Yes. We use nutrient-rich ceremonial grade matcha, natural ingredients, and customizable sweetness levels. Options range from indulgent treats to more health-conscious choices, with vegan and gluten-free availability.",
   },
+  {
+    question: "Where can I find House of Berry?",
+    answer:
+      "We currently operate as a pop-up at selected markets and events throughout Auckland. Follow us on Instagram and TikTok @houseofberrynz to see where we'll be next or to inquire about private event bookings.",
+  },
+  {
+    question: "Do you cater events?",
+    answer:
+      "Yes! We offer customised matcha and beverage services for private events, corporate functions, and special occasions. Contact us for packages and pricing.",
+  },
+  {
+    question: "What makes your matcha different from others in Auckland?",
+    answer:
+      "We focus on creating an experience, not just a drink. Each matcha is freshly whisked before your eyes, and we offer creative flavor combinations you won't find elsewhere. We're bringing fun and innovation to Auckland's matcha scene, moving beyond the boring traditional options.",
+  },
 ];
+
 
 const Questions = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -53,18 +69,26 @@ const Questions = () => {
       <div className="w-full max-w-3xl flex flex-col gap-4 z-100">
         {faqs.map((item, index) => (
           <div
-            key={index}
-            className="p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-700 shadow-md hover:scale-[1.01] transition-all duration-300 cursor-pointer"
-            onClick={() => toggle(index)}
-          >
-            <div className="flex justify-between items-center">
-              <h1 className="text-base  text-xl font-semibold">{item.question}</h1>
-              <span className="text-xl">{openIndex === index ? "−" : "+"}</span>
-            </div>
-            {openIndex === index && (
-              <p className="mt-2 text-md opacity-90">{item.answer}</p>
-            )}
-          </div>
+  key={index}
+  className="group p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-700 shadow-md transition-all duration-300 cursor-pointer"
+  onClick={() => toggle(index)}
+>
+  <div className="flex justify-between items-center">
+    <h1
+      className={`text-xl font-semibold transition-colors duration-300
+        ${openIndex === index ? "text-pink-500" : "group-hover:text-pink-300"}`}
+    >
+      {item.question}
+    </h1>
+    <span className="text-xl">{openIndex === index ? "−" : "+"}</span>
+  </div>
+  {openIndex === index && (
+    <p className="mt-2 text-md opacity-90">
+      {item.answer}
+    </p>
+  )}
+</div>
+
         ))}
       </div>
     </div>

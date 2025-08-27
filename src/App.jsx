@@ -13,7 +13,7 @@ import CustomCursor from "./components/CustomCursor";
 
 
 
-// import DeveloperTests from "./components/DeveloperTests";
+import DeveloperTests from "./components/DeveloperTests";
 
 
 const App = () => {
@@ -35,7 +35,7 @@ const App = () => {
       <Footer theme={theme} />
 
 
-      {/* <DeveloperTests theme={theme} /> */}
+      <DeveloperTests theme={theme} />
 
       
     </div>
