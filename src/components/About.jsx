@@ -57,7 +57,7 @@ const About = () => {
       </div>
 
        <Title desc="Come Meet Our Team" />
-       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
+       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 z-200">
               {teamData.map((team, index) => (
                 <motion.div
                  initial={{opacity:1, y:30}}
