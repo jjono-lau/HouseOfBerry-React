@@ -4,7 +4,7 @@ A modern website showcasing House of Berry products, including premium Matcha te
 
 ## Live Demo
 
-[View Live Site](https://jonoproxd-cell.github.io/HouseOfBerry-React/)
+[View Live Site](https://jjono-lau.github.io/HouseOfBerry-React/)
 
 ## Features
 
@@ -41,5 +41,6 @@ npm run deploy
 ```
 Make sure the homepage field in package.json matches your GitHub Pages URL:
 ```bash
-"homepage": "https://jonoproxd-cell.github.io/HouseOfBerry-React"
+"homepage": "https://your-username.github.io/HouseOfBerry-React"
 ```
+e.g. https://jjono-lau.github.io/HouseOfBerry-React/ 
