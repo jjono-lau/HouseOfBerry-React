@@ -4,10 +4,11 @@ import { InstagramEmbed, TikTokEmbed } from "react-social-media-embed";
 import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
 import Title from "./Title";
 
-const Socials = () => {
+const Moments = () => {
   return (
     <motion.div
-      className="pb-30 bg-primary dark:bg-gray-600 flex flex-col items-center gap-5 py-20 px-6 sm:px-12 lg:px-24 xl:px-40 text-center w-full overflow-hidden text-gray-700 dark:text-primary"
+    id='moments'
+      className="pb-30 bg-white dark:bg-gray-600 flex flex-col items-center gap-5 py-20 px-6 sm:px-12 lg:px-24 xl:px-40 text-center w-full overflow-hidden text-gray-700 dark:text-primary"
     >
       <Title 
         title="Matcha Moments" 
@@ -55,4 +56,4 @@ const Socials = () => {
   );
 };
 
-export default Socials;
+export default Moments;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Homepage";
-import Socials from "./components/Socials";
+import Moments from "./components/Moments";
 import Offerings from "./components/Offerings";
 import About from "./components/About";
 import Questions from "./components/Questions";
@@ -28,8 +28,10 @@ const App = () => {
 
       <About />
       <Offerings />
-      <TeamCards />
-            <Socials />
+
+      {/* <TeamCards /> */}
+
+      <Moments />
       <Questions />
       <TheCart theme={theme} />
       <Footer theme={theme} />

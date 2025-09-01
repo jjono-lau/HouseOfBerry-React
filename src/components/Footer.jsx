@@ -7,7 +7,7 @@ const Footer = ({ theme }) => {
     { href: "#home", label: "HOME" },
     { href: "#about", label: "ABOUT" },
     { href: "#offerings", label: "OFFERINGS" },
-    { href: "#team", label: "TEAM" },
+    { href: "#moments", label: "MOMENTS" },
     { href: "#faq", label: "FAQS" },
     { href: "#contact", label: "CONTACT" },
   ];

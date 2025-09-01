@@ -35,7 +35,7 @@ const HomePage = () => {
   viewport={{ once: true }}
   className="w-full sm:hidden"
 >
-  <div className="grid grid-cols-2">
+  <div className="grid grid-cols-2 border-b border-pink-100 dark:border-none">
     {smallScreenImages.map((src, i) => (
       <div key={i} className="relative aspect-square">
         <img src={src} alt={`wall-sm-${i}`} className="w-full h-full object-cover" />
@@ -52,7 +52,7 @@ const HomePage = () => {
   viewport={{ once: true }}
   className="w-full hidden sm:block"
 >
-  <div className="grid grid-cols-4">
+  <div className="grid grid-cols-4 border-b border-pink-100 dark:border-none">
     {largeScreenImages.map((src, i) => (
       <div key={i} className="relative aspect-square">
         <img src={src} alt={`wall-lg-${i}`} className="w-full h-full object-cover" />
@@ -66,7 +66,7 @@ const HomePage = () => {
      
      
      
-      <div className=" pb-30 flex flex-col items-center gap-6 py-20 px-4 sm:px-12 lg:px-24 xl:px-40 text-center w-full overflow-hidden text-gray-700 dark:text-primary">
+      <div className="bg-primary dark:bg-gray-600 pb-30 flex flex-col items-center gap-6 py-20 px-4 sm:px-12 lg:px-24 xl:px-40 text-center w-full overflow-hidden text-gray-700 dark:text-primary">
        
        
        
