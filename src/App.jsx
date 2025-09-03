@@ -6,13 +6,13 @@ import Offerings from "./components/Offerings";
 import About from "./components/About";
 import Questions from "./components/Questions";
 import TheCart from "./components/Contact";
-import TeamCards from "./components/TeamCards";
+
 import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
 
 
-
+// import TeamCards from "./components/TeamCards";
 // import DeveloperTests from "./components/DeveloperTests";
 
 
