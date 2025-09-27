@@ -1,14 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
 
+const CURSOR_DOT_SIZE = 28;
+const CURSOR_OUTLINE_SIZE = 48;
+const CURSOR_DOT_OFFSET = CURSOR_DOT_SIZE / 2;
+const CURSOR_OUTLINE_OFFSET = CURSOR_OUTLINE_SIZE / 2;
+
 const CustomCursor = () => {
   const dotRef = useRef(null);
   const outlineRef = useRef(null);
   const mouse = useRef({ x: 0, y: 0 });
   const position = useRef({ x: 0, y: 0 });
+  const animationFrameRef = useRef(null);
 
   const [showCursor, setShowCursor] = useState(false);
-  const [devToolsOpen, setDevToolsOpen] = useState(false);
 
   useEffect(() => {
     const isMobileOrTablet = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -23,60 +28,72 @@ const CustomCursor = () => {
 
   // Mouse tracking
   useEffect(() => {
-    if (!showCursor) return;
+    if (!showCursor) {
+      return;
+    }
 
-    const handleMouseMove = (e) => {
-      mouse.current.x = e.clientX;
-      mouse.current.y = e.clientY;
+    const handlePointerMove = (event) => {
+      mouse.current.x = event.clientX;
+      mouse.current.y = event.clientY;
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
-
-    const animate = () => {
-      position.current.x += (mouse.current.x - position.current.x) * 0.1;
-      position.current.y += (mouse.current.y - position.current.y) * 0.1;
+    const step = () => {
+      position.current.x += (mouse.current.x - position.current.x) * 0.18;
+      position.current.y += (mouse.current.y - position.current.y) * 0.18;
 
       if (dotRef.current) {
-        const w = dotRef.current.offsetWidth;
-        const h = dotRef.current.offsetHeight;
-        dotRef.current.style.transform = `translate3d(${mouse.current.x - w / 2}px, ${mouse.current.y - h / 2}px, 0)`;
+        dotRef.current.style.transform = `translate3d(${mouse.current.x - CURSOR_DOT_OFFSET}px, ${mouse.current.y - CURSOR_DOT_OFFSET}px, 0)`;
       }
 
       if (outlineRef.current) {
-        outlineRef.current.style.transform = `translate3d(${position.current.x - 20}px, ${position.current.y - 20}px, 0)`;
+        outlineRef.current.style.transform = `translate3d(${position.current.x - CURSOR_OUTLINE_OFFSET}px, ${position.current.y - CURSOR_OUTLINE_OFFSET}px, 0)`;
       }
 
-      requestAnimationFrame(animate);
+      animationFrameRef.current = requestAnimationFrame(step);
     };
 
-    animate();
+    document.addEventListener("pointermove", handlePointerMove, { passive: true });
+    animationFrameRef.current = requestAnimationFrame(step);
 
-    return () => document.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      document.removeEventListener("pointermove", handlePointerMove);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
+    };
   }, [showCursor]);
 
   // Detect DevTools
   useEffect(() => {
-    if (!showCursor) return;
+    if (!showCursor) {
+      return;
+    }
 
+    const threshold = 160;
+    const syncBodyCursor = (open) => {
+      document.body.style.cursor = open ? "auto" : "none";
+    };
+
+    let lastOpenState = null;
     const checkDevTools = () => {
-      const threshold = 160;
       const open =
         window.outerWidth - window.innerWidth > threshold ||
         window.outerHeight - window.innerHeight > threshold;
 
-      setDevToolsOpen(open);
-
-      // If DevTools is open, show the native cursor
-      document.body.style.cursor = open ? "auto" : "none";
+      if (lastOpenState !== open) {
+        lastOpenState = open;
+        syncBodyCursor(open);
+      }
     };
 
+    const intervalId = window.setInterval(checkDevTools, 1500);
     window.addEventListener("resize", checkDevTools);
-    window.addEventListener("mousemove", checkDevTools);
     checkDevTools();
 
     return () => {
+      window.clearInterval(intervalId);
       window.removeEventListener("resize", checkDevTools);
-      window.removeEventListener("mousemove", checkDevTools);
       document.body.style.cursor = "auto";
     };
   }, [showCursor]);

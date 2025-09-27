@@ -6,12 +6,12 @@ import HouseOfBerryAssets from "../HouseOfBerryAssets/HouseOfBerryAssets";
 import Title from "./Title";
 
 const AUTO_ADVANCE_BY_TYPE = {
-  instagram: 12000,
-  tiktok: 15000,
-  video: null,
+  instagram: 5000,
+  tiktok: 17000,
+  video: 32000,
 };
 
-const FALLBACK_VIDEO_TIMEOUT = 25000;
+const FALLBACK_VIDEO_TIMEOUT = 32000;
 const TOUCH_SWIPE_THRESHOLD = 40;
 const MAX_SIDE_ITEMS = 1;
 const SIDE_SCALE = {
@@ -27,7 +27,7 @@ const CAROUSEL_ITEMS = [
   {
     id: "insta-1",
     type: "instagram",
-    url: "https://www.instagram.com/p/DM525hry4l7/?utm_source=ig_web_copy_link&igsh=MWlvcjNvd2MzYzNjeQ==",
+    url: "https://www.instagram.com/p/DO3DXLOEyX-/?utm_source=ig_web_copy_link&igsh=MTR4Z3o3ODBsd2p6OQ==",
   },
   {
     id: "insta-2",
@@ -39,11 +39,11 @@ const CAROUSEL_ITEMS = [
     type: "video",
     src: HouseOfBerryAssets.about_vid,
   },
-  // {
-  //   id: "tiktok",
-  //   type: "tiktok",
-  //   url: "https://www.tiktok.com/@houseofberrynz/video/7539436181923040519?is_from_webapp=1&sender_device=pc",
-  // },
+  {
+    id: "tiktok",
+    type: "tiktok",
+    url: "https://www.tiktok.com/@houseofberrynz/video/7545250983677332754?is_from_webapp=1&sender_device=pc",
+  },
 ];
 
 const Moments = () => {
